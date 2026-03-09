@@ -1,45 +1,81 @@
 # 🎬 VidMatch — AI Video Explanation Similarity Evaluator
 
-VidMatch is an AI-powered system that evaluates how closely a video explanation matches an ideal reference answer.
+VidMatch is an **AI-powered multimodal system that evaluates how closely a video explanation matches an ideal reference answer.**
 
-The system analyzes both **spoken audio and visual content** from a video, generates an expert-level reference explanation using large language models, and computes similarity scores between the original explanation and the generated reference.
+The system analyzes both **spoken audio and visual content** from a video, generates an expert-level reference explanation using **large language models**, and computes similarity scores between the original explanation and the generated reference.
 
-This allows automatic evaluation of **educational explanations, lecture videos, and presentations**.
+This enables automatic evaluation of:
 
----
-
-## 🚀 Key Features
-
-* 🎙 **Speech Recognition Pipeline**
-  Extracts and transcribes speech from uploaded videos.
-
-* 👁 **Visual Content Analysis**
-  Uses the BLIP vision model to analyze frames for text, diagrams, and whiteboard content.
-
-* 🔀 **Multimodal Fusion**
-  Combines speech transcript and visual descriptions into a unified context.
-
-* 🤖 **AI Reference Answer Generation**
-  Generates an ideal explanation using LLMs such as:
-
-  * Llama 3.3 (via Groq)
-  * OpenAI GPT
-  * Google Gemini
-  * Anthropic Claude
-
-* 📊 **Similarity Evaluation**
-  Computes multiple similarity metrics:
-
-  * TF-IDF Cosine Similarity
-  * Keyword Overlap (Jaccard)
-  * Coverage Ratio
-
-* 🌐 **Interactive Web Interface**
-  Upload a video, run the analysis, and visualize the results.
+* Educational explanations
+* Lecture videos
+* Student presentations
+* Training materials
 
 ---
 
-## 🧠 System Architecture
+# 📸 Demo
+
+## Interface
+
+![Interface](docs/interface.png)
+
+## Processing Pipeline
+
+![Processing](docs/processing.png)
+
+## Evaluation Result
+
+![Results](docs/results.png)
+
+## Multimodal Analysis
+
+![Analysis](docs/analysis.png)
+
+---
+
+# 🚀 Key Features
+
+### 🎙 Speech Recognition Pipeline
+
+Extracts and transcribes speech from uploaded videos.
+
+### 👁 Visual Content Analysis
+
+Uses the **BLIP vision model** to analyze frames for:
+
+* text
+* diagrams
+* whiteboard content
+* slides
+
+### 🔀 Multimodal Fusion
+
+Combines **speech transcript and visual descriptions** into a unified contextual representation.
+
+### 🤖 AI Reference Answer Generation
+
+Generates an ideal explanation using LLMs such as:
+
+* **Llama 3.3 (Groq)**
+* **OpenAI GPT**
+* **Google Gemini**
+* **Anthropic Claude**
+
+### 📊 Similarity Evaluation
+
+Computes multiple similarity metrics:
+
+* **TF-IDF Cosine Similarity**
+* **Keyword Overlap (Jaccard)**
+* **Coverage Ratio**
+
+### 🌐 Interactive Web Interface
+
+Upload a video, run the analysis, and visualize the results in an interactive dashboard.
+
+---
+
+# 🧠 System Architecture
 
 ```
 Video Input
@@ -65,9 +101,9 @@ Web Interface Results
 
 ---
 
-## 🛠 Tech Stack
+# 🛠 Tech Stack
 
-### Backend
+## Backend
 
 * Python
 * Flask
@@ -75,7 +111,7 @@ Web Interface Results
 * scikit-learn
 * NumPy
 
-### AI Models
+## AI Models
 
 * BLIP Image Captioning
 * Llama 3 (Groq)
@@ -83,12 +119,12 @@ Web Interface Results
 * Google Gemini
 * Anthropic Claude
 
-### Video Processing
+## Video Processing
 
 * ffmpeg
 * moviepy
 
-### Frontend
+## Frontend
 
 * HTML
 * CSS
@@ -96,52 +132,61 @@ Web Interface Results
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
 ```
 video_similarity_app/
 │
-├── app.py              # Main Flask backend
-├── run.py              # Server launcher
-├── setup.py            # Setup script
-├── requirements.txt    # Dependencies
-├── .env.example        # Environment template
-├── .gitignore
+├── docs/               # Screenshots used in README
+│   ├── interface.png
+│   ├── processing.png
+│   ├── results.png
+│   └── analysis.png
 │
 ├── templates/
 │   └── index.html      # Frontend interface
 │
-└── uploads/            # Temporary uploaded files
+├── app.py              # Main Flask backend
+├── run.py              # Server launcher
+├── setup.py            # Setup script
+├── requirements.txt    # Python dependencies
+├── .env.example        # Configuration template
+├── .gitignore
+└── README.md
 ```
 
 ---
 
-## ⚙️ Installation
+# ⚙️ Installation
 
-### 1. Clone the repository
+## 1️⃣ Clone the repository
 
 ```bash
 git clone https://github.com/YashovardhanReddy001/video_similarity_app.git
 cd video_similarity_app
 ```
 
-### 2. Install dependencies
+---
+
+## 2️⃣ Install dependencies
 
 ```bash
 python setup.py
 ```
 
-or manually:
+or
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Install ffmpeg
+---
 
-Required for audio extraction.
+## 3️⃣ Install FFmpeg
 
-Windows:
+FFmpeg is required for audio extraction.
+
+### Windows
 
 ```bash
 winget install ffmpeg
@@ -155,7 +200,7 @@ ffmpeg -version
 
 ---
 
-## 🔑 Configure API Keys
+# 🔑 Configure API Keys
 
 Create a `.env` file based on `.env.example`.
 
@@ -163,7 +208,7 @@ Example:
 
 ```
 AI_PROVIDER=groq
-GROQ_API_KEY=your_key_here
+GROQ_API_KEY=your_api_key_here
 ```
 
 Supported providers:
@@ -175,7 +220,7 @@ Supported providers:
 
 ---
 
-## ▶️ Running the Application
+# ▶️ Running the Application
 
 Start the server:
 
@@ -193,7 +238,7 @@ Upload a video and start analysis.
 
 ---
 
-## 📊 Similarity Metrics
+# 📊 Similarity Metrics
 
 | Metric              | Method             | Weight |
 | ------------------- | ------------------ | ------ |
@@ -203,7 +248,7 @@ Upload a video and start analysis.
 
 ---
 
-## 🎯 Use Cases
+# 🎯 Use Cases
 
 * Automated evaluation of student presentations
 * Lecture quality analysis
@@ -213,7 +258,7 @@ Upload a video and start analysis.
 
 ---
 
-## 📌 Future Improvements
+# 📌 Future Improvements
 
 * Transformer-based semantic similarity models
 * Multilingual speech recognition
@@ -223,15 +268,15 @@ Upload a video and start analysis.
 
 ---
 
-## 📜 License
+# 📜 License
 
 MIT License
 
 ---
 
-## 👨‍💻 Author
+# 👨‍💻 Author
 
 **Yashovardhan Reddy**
 
-GitHub:
+GitHub
 https://github.com/YashovardhanReddy001
