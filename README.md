@@ -1,5 +1,7 @@
 # 🎬 VidMatch — AI Video Explanation Similarity Evaluator
 
+AI-powered multimodal system for evaluating video explanations using speech recognition, computer vision, and LLM-generated reference answers.
+
 VidMatch is an **AI-powered multimodal system that evaluates how closely a video explanation matches an ideal reference answer.**
 
 The system analyzes both **spoken audio and visual content** from a video, generates an expert-level reference explanation using **large language models**, and computes similarity scores between the original explanation and the generated reference.
